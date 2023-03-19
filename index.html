@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather Dashboard</title>
   </head>
   <header id="header">
     Here's the Weather Forecast
@@ -17,6 +18,17 @@
       <p><input type="submit" value="Submit" id="searcher" /></p>
       <div id="searchHistory"></div>
     </aside>
-    <div id="display"></div>
+    <div id="display">
+      <div id="initialDay">Here's where the display will sit</div>
+      <p id="boxes">5 day forecast boxes</p>
+      <div id="boxContainer">
+        <div class="box" id="box1" style="background-color:#ddd"></div>
+        <div class="box" id="box2" style="background-color:#bbb"></div>
+        <div class="box" id="box3" style="background-color:#ccc"></div>
+        <div class="box" id="box4" style="background-color:#bbb"></div>
+        <div class="box" id="box5" style="background-color:#aaa"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
