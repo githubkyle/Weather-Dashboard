@@ -1,14 +1,6 @@
 function Fetcher() {
   var Key = "4f532c03f12a6d8603036fbfb4f2b105";
-  var BaseURL =
-    "https://api.openweathermap.org/data/2.5/forecast?lat=" +
-    lat +
-    "&lon=" +
-    lon +
-    "&appid=" +
-    Key;
-  var lat = 32.7;
-  var lon = 96.7;
+
   var history = [];
   var city = document.getElementById("cityName").value;
   var PutBoxesHere = document.getElementById("boxContainer");
@@ -20,16 +12,6 @@ function Fetcher() {
     "&appid=" +
     Key +
     "&units=imperial";
-  var TestURL =
-    "api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + Key;
-
-  var Fifth = `https://api.openweathermap.org/data/2.5/forecast?lat=32.7&lon=96.8&appid=4f532c03f12a6d8603036fbfb4f2b105`;
-
-  var queryURL =
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
-    city +
-    "&appid=" +
-    Key;
 
   fetch(requestUrlToday)
     .then(function(response) {
