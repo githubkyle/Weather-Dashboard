@@ -10,7 +10,7 @@ function Fetcher() {
   var lat = 32.7;
   var lon = 96.7;
   var history = [];
-  var city = document.getElementById("cityName").val;
+  var city = document.getElementById("cityName").value;
   var PutBoxesHere = document.getElementById("boxContainer");
   var userContainer = document.getElementById("display");
   var fetchButton = document.getElementById("fetch-button");
@@ -45,14 +45,14 @@ function Fetcher() {
         var Wind = document.createElement("h3");
         var Humidity = document.createElement("h3");
 
-        // Sunshine.textContent = data[i].sun;
-        // Temp.textContent = data[i].temp;
-        // Wind.textContent = data[i].wind;
-        // Humidty.textContent = data[i].humidity;
-        // PutBoxesHere.append(Sunshine);
-        // PutBoxesHere.append(Temp);
-        // PutBoxesHere.append(Wind);
-        // PutBoxesHere.append(Humidity);
+        Sunshine.textContent = data[i].weather.icon;
+        Temp.textContent = data[i].main.temp;
+        Wind.textContent = data[i].wind.speed;
+        Humidity.textContent = data[i].main.humidity;
+        PutBoxesHere.append(Sunshine);
+        PutBoxesHere.append(Temp);
+        PutBoxesHere.append(Wind);
+        PutBoxesHere.append(Humidity);
       }
       history.push(city);
     });
