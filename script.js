@@ -15,27 +15,26 @@ function Fetcher() {
 
   fetch(requestUrlToday)
     .then(function(response) {
+      if (!response.ok) {
+        throw new Error("Network Error");
+      }
       return response.json();
     })
     .then(function(data) {
       console.log(data);
-      for (i = 0; i < 5; i++) {
-        console.log(data[i]);
 
-        var Sunshine = document.createElement("h3");
-        var Temp = document.createElement("h3");
-        var Wind = document.createElement("h3");
-        var Humidity = document.createElement("h3");
+      var Temp = document.querySelector("#temp");
+      var Wind = document.querySelector("#wind");
+      var Humidity = document.querySelector("#humidity");
 
-        Sunshine.textContent = data[i].weather.icon;
-        Temp.textContent = data[i].main.temp;
-        Wind.textContent = data[i].wind.speed;
-        Humidity.textContent = data[i].main.humidity;
-        PutBoxesHere.append(Sunshine);
-        PutBoxesHere.append(Temp);
-        PutBoxesHere.append(Wind);
-        PutBoxesHere.append(Humidity);
-      }
+      Temp.textContent = data.main.temp + "°F";
+      Wind.textContent = data.wind.speed + "mph";
+      Humidity.textContent = data.main.humidity + "°F";
+
+      PutBoxesHere.append(Temp);
+      PutBoxesHere.append(Wind);
+      PutBoxesHere.append(Humidity);
+
       history.push(city);
     });
   localStorage.setItem("history", history);
@@ -43,7 +42,36 @@ function Fetcher() {
 }
 var SearchHistory = document.getElementById("searchHistory");
 SearchHistory.innerHTML = localStorage.getItem(history);
+
+function AllForecast() {
+  fetch(requestUrlToday)
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error("Network Error");
+      }
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+      for (let i = 0; i < 5; i++) {
+        console.log(data[i]);
+
+        var Temp = document.querySelector("#temp" + i);
+        var Wind = document.querySelector("#wind" + i);
+        var Humidity = document.querySelector("#humidity" + i);
+
+        Temp.textContent = data.list[i].main.temp + "°F";
+        Wind.textContent = data.list[i].wind.speed + "mph";
+        Humidity.textContent = data.list[i].main.humidity + "°F";
+
+        userContainer.append(Temp);
+        userContainer.append(Wind);
+        userContainer.append(Humidity);
+      }
+    });
+}
 var Searcher = document.getElementById("searcher");
+Searcher.addEventListener("click", Fetcher);
 
 // function getApi() {
 //   var requestUrl = "https://api.github.com/users?per_page=5";
@@ -69,5 +97,3 @@ var Searcher = document.getElementById("searcher");
 //       // TODO: Loop through the data and generate your HTML
 //     });
 // }
-
-Searcher.addEventListener("click", Fetcher);
