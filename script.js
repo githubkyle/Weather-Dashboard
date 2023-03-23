@@ -38,10 +38,11 @@ function Fetcher() {
       history.push(city);
     });
   localStorage.setItem("history", history);
+  var SearchHistory = document.getElementById("searchHistory");
+SearchHistory.innerHTML = localStorage.getItem(history);
   //sun, temp, wind, humidity
 }
-var SearchHistory = document.getElementById("searchHistory");
-SearchHistory.innerHTML = localStorage.getItem(history);
+
 
 function AllForecast() {
   fetch(requestUrlToday)
