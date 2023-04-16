@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Weather Dashboard</title>
   </head>
   <header id="header">
@@ -22,41 +22,42 @@
       <p id="currentCity"></p> 
       <p id="boxes">5 day forecast boxes</p>
       <p id="chosenCity"></p>
+      <div class="boxxy" id="box1" style="background-color:lightblue">
+        <div id="date0"></div>
+        <div id="temp0"></div>
+        <div id="wind0"></div>
+        <div id="humidity0"></div>
+        <div id="Iconic0" class="pic"></div>
+      </div>
+      <p id="future">Days ahead:</p>
       <div id="boxContainer">
-        <div class="box" id="box1" style="background-color:#ddd">
-          <div id="date0"></div>
-          <div id="temp0"></div>
-          <div id="wind0"></div>
-          <div id="humidity0"></div>
-          <div id="Iconic0"></div>
-        </div>
-        <div class="box" id="box2" style="background-color:#bbb">
+        <div class="box" id="box2" style="background-color: #e9e90e">
           <div id="date1"></div>
           <div id="temp1"></div>
           <div id="wind1"></div>
           <div id="humidity1"></div>
-          <div id="Iconic1"></div>
+          <div id="Iconic1" class="pic"></div>
         </div>
-        <div class="box" id="box3" style="background-color:#ccc">
+        <div class="box" id="box3" style="background-color:#e9e90e">
           <div id="date2"></div>
           <div id="temp2"></div>
           <div id="wind2"></div>
           <div id="humidity2"></div>
-          <div id="Iconic2"></div>
+          <div id="Iconic2" class="pic"></div>
         </div>
-        <div class="box" id="box4" style="background-color:#bbb">
+        <div class="box" id="box4" style="background-color:#e9e90e">
           <div id="date3"></div>
           <div id="temp3"></div>
           <div id="wind3"></div>
           <div id="humidity3"></div>
-          <div id="Iconic3"></div>
+          <div id="Iconic3" class="pic"></div>
         </div>
-        <div class="box" id="box5" style="background-color:#aaa">
+        <div class="box" id="box5" style="background-color:#e9e90e">
           <div id="date4"></div>
           <div id="temp4"></div>
           <div id="wind4"></div>
           <div id="humidity4"></div>
-          <div id="Iconic4"></div>
+          <div id="Iconic4" class="pic"></div>
       </div>
     </div>
     <script
@@ -64,6 +65,6 @@ src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
 integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
 crossorigin="anonymous"
 ></script>
-    <script src="script.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>

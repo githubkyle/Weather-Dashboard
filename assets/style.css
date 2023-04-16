@@ -1,0 +1,37 @@
+#header {
+  text-align: center;
+}
+
+#display {
+  text-align: center;
+}
+
+.box {
+  float: left;
+  width: 20%;
+  padding: 50px;
+  margin: 10px;
+  background-color: lightblue;
+}
+#boxContainer {
+  display: flex;
+  margin: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: lightblue;
+}
+
+.boxxy {
+  justify-content: center;
+  text-align: center;
+
+  padding: 50px;
+  background-color: lightblue;
+}
+#future {
+  text-align: center;
+}
+
+body {
+  background-color: lightgreen;
+}
