@@ -35,6 +35,10 @@ function Fetcher() {
         var Temp = document.querySelector("#temp" + i);
         var Wind = document.querySelector("#wind" + i);
         var Humidity = document.querySelector("#humidity" + i);
+        const currentImage = IconPlace.querySelector("img");
+        if (currentImage) {
+          IconPlace.removeChild(currentImage);
+        }
         var IconElement = document.createElement("img");
 
         var iconUrl =
