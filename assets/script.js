@@ -55,15 +55,20 @@ function Fetcher() {
         // IconElement = iconUrl;
         IconElement.setAttribute("src", iconUrl);
         dateEl.textContent = date.toDateString();
-        Temp.textContent = data.list[i].main.temp + "°F";
-        Wind.textContent = data.list[i].wind.speed + "mph";
-        Humidity.textContent = data.list[i].main.humidity + "°F";
+        Temp.textContent = "Temp--" + data.list[i].main.temp + "°F";
+        Wind.textContent = "Wind--" + data.list[i].wind.speed + "mph";
+        Humidity.textContent = "Humidity--" + data.list[i].main.humidity + "%";
 
         new Date();
         IconPlace.appendChild(IconElement);
       }
-
-      history1.push(" " + city);
+      const searchedButton = document.createElement("button");
+      // searchedButton.innerText = `${city}`;
+      searchedButton.classList.add("searching");
+      if (!history1.includes(city)) {
+        history1.push(" " + searchedButton);
+      }
+      //PROBLEM IS HERE FROM GETTING THE SEARCH TO WORK
       localStorage.setItem("history", history1);
       var SearchHistory = document.getElementById("searchHistory");
       SearchHistory.innerHTML = localStorage.getItem("history");
@@ -84,3 +89,6 @@ CityTextBox.addEventListener("keyup", function(event) {
     city.value = "";
   }
 });
+
+// const Researching = document.getElementsByClassName("searching");
+// Researching.addEventListener("click", Fetcher(this.city));
